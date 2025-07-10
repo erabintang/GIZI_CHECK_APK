@@ -1,0 +1,9 @@
+<h2>Riwayat Deteksi Wajah</h2>
+<a href="/">⬅️ Kembali</a>
+<hr>
+{% for img in images %}
+    <div style="margin: 10px; display: inline-block;">
+        <img src="{{ img }}" width="250" style="border-radius: 10px; box-shadow: 0 0 5px gray;">
+        <p>{{ img.split('/')[-1] }}</p>
+    </div>
+{% endfor %}

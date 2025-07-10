@@ -1,0 +1,44 @@
+{
+  "ayam goreng": {
+    "kalori": 250,
+    "lemak": 15,
+    "protein": 20,
+    "serat": 0,
+    "kategori": "tidak sehat"
+  },
+  "nasi putih": {
+    "kalori": 200,
+    "lemak": 1,
+    "protein": 4,
+    "serat": 0.5,
+    "kategori": "netral"
+  },
+  "sayur bayam": {
+    "kalori": 50,
+    "lemak": 0.5,
+    "protein": 3,
+    "serat": 2,
+    "kategori": "sehat"
+  },
+  "es teh manis": {
+    "kalori": 120,
+    "lemak": 0,
+    "protein": 0,
+    "serat": 0,
+    "kategori": "tidak sehat"
+  },
+  "buah apel": {
+    "kalori": 95,
+    "lemak": 0.3,
+    "protein": 0.5,
+    "serat": 2.4,
+    "kategori": "sehat"
+  },
+  "mie goreng": {
+    "kalori": 350,
+    "lemak": 14,
+    "protein": 8,
+    "serat": 1.5,
+    "kategori": "tidak sehat"
+  }
+}

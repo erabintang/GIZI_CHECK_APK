@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasil Analisis Gizi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .result-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .food-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    .emoji-title {
+      font-size: 2rem;
+    }
+    .list-group-item + .list-group-item {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="result-card">
+      <h1 class="text-center emoji-title mb-4">🍽️ Hasil Analisis Gizi</h1>
+
+      <div class="text-center mb-4">
+        <img src="{{ image_path }}" alt="Gambar Makanan" class="food-img">
+      </div>
+
+      <div class="alert alert-primary">
+        <strong>🤖 Deskripsi AI:</strong> {{ caption }}
+      </div>
+
+      <h4 class="mt-4">🧪 Detail Gizi yang Terdeteksi:</h4>
+      <ul class="list-group mb-4">
+        {% for item in results %}
+        <li class="list-group-item">
+          <h6 class="mb-1 text-capitalize">🍴 {{ item.nama }}</h6>
+          <p class="mb-0">
+            Kalori: <strong>{{ item.kalori }} kkal</strong> |
+            Lemak: <strong>{{ item.lemak }} gr</strong> |
+            Kategori: <strong>{{ item.kategori }}</strong>
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Tambahan: Penjelasan Komponen Gizi -->
+      <div class="alert alert-secondary">
+        <h5>🔍 Penjelasan Komponen Gizi:</h5>
+        <ul class="mb-0">
+          <li><strong>Kalori (kkal)</strong>: menunjukkan jumlah energi yang diperoleh dari makanan. Kalori tinggi tidak selalu buruk, tapi harus seimbang dengan aktivitas harianmu.</li>
+          <li><strong>Lemak (gram)</strong>: penting untuk tubuh, tapi konsumsi berlebih terutama lemak jenuh bisa berdampak negatif pada kesehatan.</li>
+          <li><strong>Kategori</strong>: adalah penilaian umum apakah makanan tergolong <em>sehat</em>, <em>netral</em>, atau <em>tidak sehat</em> berdasarkan kandungan nutrisinya.</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-warning text-center">
+        🔢 <strong>Total Kalori:</strong> {{ total_calories }} kkal
+      </div>
+
+      <div class="alert alert-info text-center">
+        <h5 class="mb-0">📌 <strong>Kesimpulan Gizi:</strong> {{ final_status }}</h5>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/" class="btn btn-success btn-lg">🔁 Cek Makanan Lain</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
